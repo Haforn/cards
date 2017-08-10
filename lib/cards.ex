@@ -1,6 +1,15 @@
 defmodule Cards do
   def create_deck do
-    ["Ace", "Two", "Three"]
+    values = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Jack", "Queen", "King"]
+    suits = ["Spades", "Clubs", "Hearts", "Diamon"]
+
+    cards = for suit <- suits do
+      for value <- values do
+        "#{value} of #{suit}"
+      end
+    end
+
+    List.flatten(cards)
   end
 
   def shuffle(deck) do
